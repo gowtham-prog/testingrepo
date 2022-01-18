@@ -35,6 +35,7 @@ def contact(request):
     return render(request, "first/contact.html")
 def home(request):
     return render(request,"first/index.html")
+@login_required(login_url='/login')
 def addcomment(request,id):
     cUser=request.user
     product=Products.objects.get(id=id)
